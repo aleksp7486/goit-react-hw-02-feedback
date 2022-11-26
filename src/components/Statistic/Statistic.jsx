@@ -29,7 +29,7 @@ const Statistic = ({ good, neutral, bad, total, positivePercentage }) => {
       </Item>
       <Item>
         <Text>
-          Bad:
+          Positive feedback:
           <Value>{positivePercentage()}%</Value>
         </Text>
       </Item>
