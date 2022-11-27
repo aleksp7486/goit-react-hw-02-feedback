@@ -11,8 +11,8 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  onLeaveFeedback = property => {
-    this.setState(prevState => ({ [property]: prevState[property] + 1 }));
+  onLeaveFeedback = feedback => {
+    this.setState(prevState => ({ [feedback]: prevState[feedback] + 1 }));
   };
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
@@ -24,10 +24,11 @@ class App extends Component {
     return (
       <Box
         display="flex"
-        flexDirection="column"
         justifyContent="center"
-        alignItems="center"
-        width="100vw"
+        alignItems="start"
+        p="120px"
+        m="0 auto"
+        maxWidth="800px"
         height="100vh"
       >
         <Box p={4} bg="bg" border="4px solid #1b8cbc" borderRadius="8px">
