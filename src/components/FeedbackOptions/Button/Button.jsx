@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import { Btn } from './Button.styled';
 
-const Button = ({ children, onLeaveFeedback }) => {
+const Button = ({ onLeaveFeedback, children }) => {
   return (
     <Btn type="button" onClick={() => onLeaveFeedback()}>
       {children}
@@ -8,4 +9,7 @@ const Button = ({ children, onLeaveFeedback }) => {
   );
 };
 
+Button.propTyps = {
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
 export default Button;
