@@ -2,20 +2,18 @@ import PropTypes from 'prop-types';
 import { List } from './FeedbackOptions.styled';
 import Button from './Button/Button';
 
-const FeedbackOptions = ({ onLeaveFeedback }) => {
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <List>
-      <li>
-        <Button onLeaveFeedback={() => onLeaveFeedback('good')}>Good</Button>
-      </li>
-      <li>
-        <Button onLeaveFeedback={() => onLeaveFeedback('neutral')}>
-          Neutral
-        </Button>
-      </li>
-      <li>
-        <Button onLeaveFeedback={() => onLeaveFeedback('bad')}>Bad</Button>
-      </li>
+      {options.map(option => {
+        return (
+          <li>
+            <Button onLeaveFeedback={() => onLeaveFeedback(option)}>
+              {option}
+            </Button>
+          </li>
+        );
+      })}
     </List>
   );
 };

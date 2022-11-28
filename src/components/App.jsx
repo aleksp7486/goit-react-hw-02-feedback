@@ -11,8 +11,8 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  onLeaveFeedback = feedback => {
-    this.setState(prevState => ({ [feedback]: prevState[feedback] + 1 }));
+  onLeaveFeedback = option => {
+    this.setState(prevState => ({ [option]: prevState[option] + 1 }));
   };
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
@@ -33,7 +33,10 @@ class App extends Component {
       >
         <Box p={4} bg="bg" border="4px solid #1b8cbc" borderRadius="8px">
           <Section title="Please leave feedback">
-            <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} />
+            <FeedbackOptions
+              options={Object.keys(this.state)}
+              onLeaveFeedback={this.onLeaveFeedback}
+            />
           </Section>
           <Section title="Statistic">
             {this.countTotalFeedback() > 0 ? (

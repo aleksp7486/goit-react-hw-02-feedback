@@ -5,6 +5,7 @@ export const Btn = styled.button`
   font-size: ${p => p.theme.fontSizes.m};
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.white};
+  text-transform: capitalize;
   background-color: ${p => p.theme.colors.primary};
   /* border: ${p => p.theme.borders.double}; */
   border-color: ${p => p.theme.colors.secondary};
